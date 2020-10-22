@@ -4,9 +4,9 @@ class FileManager {
     {
         if(!file_exists("./$pathname")){
             $oldmask = umask(0);
-            mkdir($pathname, 0777);
+            $fileCreation = mkdir($pathname, 0777);
             umask($oldmask);
-            return true;
+            return $fileCreation;
         }else{
             return false;
         }
